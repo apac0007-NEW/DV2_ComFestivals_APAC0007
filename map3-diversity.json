@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Night map of Brisbane: busy hexagons coloured by how many of the eight kinds of event they host",
+  "description": "Night map of Brisbane: busy hexagons coloured by how many of the eight kinds of event they host. Updated for high-contrast white labels, clearer map boundaries and readable legends.",
   "config": {
     "view": {
       "stroke": null,
-      "fill": "#0e1a33"
+      "fill": "#101c34"
     },
     "font": "Source Serif 4",
     "axis": {
@@ -15,9 +15,9 @@
       "labelFontSize": 13,
       "titleFontSize": 13,
       "titleFontWeight": "normal",
-      "labelColor": "#39425a",
-      "titleColor": "#39425a",
-      "gridColor": "#e8ebf3",
+      "labelColor": "#ffffff",
+      "titleColor": "#ffffff",
+      "gridColor": "#405477",
       "labelPadding": 6,
       "titlePadding": 10
     },
@@ -27,12 +27,13 @@
       "labelFontSize": 12,
       "titleFontSize": 12,
       "titleFontWeight": "normal",
-      "labelColor": "#39425a",
-      "titleColor": "#39425a",
+      "labelColor": "#ffffff",
+      "titleColor": "#ffffff",
       "titleLimit": 320
     },
     "text": {
-      "font": "Source Serif 4"
+      "font": "Source Serif 4",
+      "color": "#ffffff"
     }
   },
   "usermeta": {
@@ -79,9 +80,9 @@
       },
       "mark": {
         "type": "geoshape",
-        "fill": "#1f3259",
-        "stroke": "#3b5384",
-        "strokeWidth": 1
+        "fill": "#24395f",
+        "stroke": "#5876a8",
+        "strokeWidth": 1.25
       }
     },
     {
@@ -118,7 +119,7 @@
             "empty": false,
             "value": "#ffffff"
           },
-          "value": "#0e1a33"
+          "value": "#10233f"
         },
         "strokeWidth": {
           "condition": {
@@ -126,7 +127,7 @@
             "empty": false,
             "value": 2.5
           },
-          "value": 0.8
+          "value": 1.05
         },
         "color": {
           "field": "properties.types",
@@ -140,11 +141,11 @@
               6
             ],
             "range": [
-              "#2a1245",
-              "#7b1f6b",
-              "#d6336c",
-              "#ff8a5c",
-              "#ffd37a"
+              "#32164b",
+              "#8e2474",
+              "#e13c79",
+              "#ff9568",
+              "#ffe08a"
             ],
             "clamp": true
           },
@@ -161,7 +162,11 @@
               4,
               5,
               6
-            ]
+            ],
+            "labelColor": "#ffffff",
+            "titleColor": "#ffffff",
+            "labelFontSize": 12,
+            "titleFontSize": 12
           }
         },
         "tooltip": [
@@ -223,11 +228,11 @@
           "mark": {
             "type": "point",
             "shape": "circle",
-            "size": 34,
+            "size": 42,
             "filled": true,
             "color": "#ffffff",
-            "stroke": "#0b1530",
-            "strokeWidth": 1.2
+            "stroke": "#071326",
+            "strokeWidth": 1.6
           }
         },
         {
@@ -236,12 +241,14 @@
             "fontSize": 13,
             "fontWeight": 700,
             "align": "left",
-            "dx": 8,
-            "dy": -8,
-            "color": "#0b1530",
-            "stroke": "#0b1530",
-            "strokeWidth": 5,
-            "strokeJoin": "round"
+            "dx": 9,
+            "dy": -9,
+            "color": "#ffffff",
+            "stroke": "#08162e",
+            "strokeWidth": 3.5,
+            "strokeJoin": "round",
+            "strokeOpacity": 1,
+            "limit": 220
           },
           "encoding": {
             "text": {
@@ -256,9 +263,14 @@
             "fontSize": 13,
             "fontWeight": 700,
             "align": "left",
-            "dx": 8,
-            "dy": -8,
-            "color": "#ffffff"
+            "dx": 9,
+            "dy": -9,
+            "color": "#ffffff",
+            "stroke": "#08162e",
+            "strokeWidth": 3.5,
+            "strokeJoin": "round",
+            "strokeOpacity": 1,
+            "limit": 220
           },
           "encoding": {
             "text": {
