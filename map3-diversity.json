@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Night map of Brisbane: busy hexagons coloured by how many of the eight kinds of event they host. Updated for high-contrast white labels, clearer map boundaries and readable legends.",
+  "description": "Night map of Brisbane: busy hexagons coloured by how many of the eight kinds of event they host. In-map place labels use white text with a thin dark outline; legends remain dark on the white page.",
   "config": {
     "view": {
       "stroke": null,
-      "fill": "#101c34"
+      "fill": "#0b1730"
     },
     "font": "Source Serif 4",
     "axis": {
@@ -15,9 +15,9 @@
       "labelFontSize": 13,
       "titleFontSize": 13,
       "titleFontWeight": "normal",
-      "labelColor": "#ffffff",
-      "titleColor": "#ffffff",
-      "gridColor": "#405477",
+      "labelColor": "#263653",
+      "titleColor": "#263653",
+      "gridColor": "#e8ebf3",
       "labelPadding": 6,
       "titlePadding": 10
     },
@@ -27,13 +27,12 @@
       "labelFontSize": 12,
       "titleFontSize": 12,
       "titleFontWeight": "normal",
-      "labelColor": "#ffffff",
-      "titleColor": "#ffffff",
+      "labelColor": "#263653",
+      "titleColor": "#263653",
       "titleLimit": 320
     },
     "text": {
-      "font": "Source Serif 4",
-      "color": "#ffffff"
+      "font": "Source Serif 4"
     }
   },
   "usermeta": {
@@ -80,9 +79,9 @@
       },
       "mark": {
         "type": "geoshape",
-        "fill": "#24395f",
-        "stroke": "#5876a8",
-        "strokeWidth": 1.25
+        "fill": "#203b64",
+        "stroke": "#6687b8",
+        "strokeWidth": 1.35
       }
     },
     {
@@ -95,191 +94,3 @@
       "transform": [
         {
           "filter": "datum.properties.n >= 10"
-        }
-      ],
-      "params": [
-        {
-          "name": "hov",
-          "select": {
-            "type": "point",
-            "on": "mouseover",
-            "clear": "mouseout"
-          }
-        }
-      ],
-      "mark": {
-        "type": "geoshape",
-        "strokeJoin": "round",
-        "opacity": 0.95
-      },
-      "encoding": {
-        "stroke": {
-          "condition": {
-            "param": "hov",
-            "empty": false,
-            "value": "#ffffff"
-          },
-          "value": "#10233f"
-        },
-        "strokeWidth": {
-          "condition": {
-            "param": "hov",
-            "empty": false,
-            "value": 2.5
-          },
-          "value": 1.05
-        },
-        "color": {
-          "field": "properties.types",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              1,
-              2,
-              3,
-              4,
-              6
-            ],
-            "range": [
-              "#32164b",
-              "#8e2474",
-              "#e13c79",
-              "#ff9568",
-              "#ffe08a"
-            ],
-            "clamp": true
-          },
-          "legend": {
-            "title": "Kinds of event (of 8)",
-            "orient": "bottom",
-            "direction": "horizontal",
-            "gradientLength": 220,
-            "gradientThickness": 12,
-            "values": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6
-            ],
-            "labelColor": "#ffffff",
-            "titleColor": "#ffffff",
-            "labelFontSize": 12,
-            "titleFontSize": 12
-          }
-        },
-        "tooltip": [
-          {
-            "field": "properties.types",
-            "type": "quantitative",
-            "title": "Kinds of event"
-          },
-          {
-            "field": "properties.n",
-            "type": "quantitative",
-            "title": "Events"
-          }
-        ]
-      }
-    },
-    {
-      "data": {
-        "values": [
-          {
-            "name": "CBD",
-            "lat": -27.4698,
-            "lon": 153.0251
-          },
-          {
-            "name": "Chermside",
-            "lat": -27.386,
-            "lon": 153.034
-          },
-          {
-            "name": "Indooroopilly",
-            "lat": -27.5,
-            "lon": 152.973
-          },
-          {
-            "name": "Carindale",
-            "lat": -27.505,
-            "lon": 153.1
-          },
-          {
-            "name": "Sunnybank",
-            "lat": -27.576,
-            "lon": 153.058
-          }
-        ]
-      },
-      "encoding": {
-        "latitude": {
-          "field": "lat",
-          "type": "quantitative"
-        },
-        "longitude": {
-          "field": "lon",
-          "type": "quantitative"
-        }
-      },
-      "layer": [
-        {
-          "mark": {
-            "type": "point",
-            "shape": "circle",
-            "size": 42,
-            "filled": true,
-            "color": "#ffffff",
-            "stroke": "#071326",
-            "strokeWidth": 1.6
-          }
-        },
-        {
-          "mark": {
-            "type": "text",
-            "fontSize": 13,
-            "fontWeight": 700,
-            "align": "left",
-            "dx": 9,
-            "dy": -9,
-            "color": "#ffffff",
-            "stroke": "#08162e",
-            "strokeWidth": 3.5,
-            "strokeJoin": "round",
-            "strokeOpacity": 1,
-            "limit": 220
-          },
-          "encoding": {
-            "text": {
-              "field": "name",
-              "type": "nominal"
-            }
-          }
-        },
-        {
-          "mark": {
-            "type": "text",
-            "fontSize": 13,
-            "fontWeight": 700,
-            "align": "left",
-            "dx": 9,
-            "dy": -9,
-            "color": "#ffffff",
-            "stroke": "#08162e",
-            "strokeWidth": 3.5,
-            "strokeJoin": "round",
-            "strokeOpacity": 1,
-            "limit": 220
-          },
-          "encoding": {
-            "text": {
-              "field": "name",
-              "type": "nominal"
-            }
-          }
-        }
-      ]
-    }
-  ]
-}
