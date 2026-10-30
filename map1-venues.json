@@ -1,198 +1,3 @@
-{
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Night map of Brisbane: event venues as glowing circles, festival and market venues in magenta. Updated for high-contrast white labels, clearer map boundaries and readable legends.",
-  "config": {
-    "view": {
-      "stroke": null,
-      "fill": "#101c34"
-    },
-    "font": "Source Serif 4",
-    "axis": {
-      "labelFont": "Source Serif 4",
-      "titleFont": "Source Serif 4",
-      "domain": false,
-      "tickSize": 0,
-      "labelFontSize": 13,
-      "titleFontSize": 13,
-      "titleFontWeight": "normal",
-      "labelColor": "#ffffff",
-      "titleColor": "#ffffff",
-      "gridColor": "#405477",
-      "labelPadding": 6,
-      "titlePadding": 10
-    },
-    "legend": {
-      "labelFont": "Source Serif 4",
-      "titleFont": "Source Serif 4",
-      "labelFontSize": 12,
-      "titleFontSize": 12,
-      "titleFontWeight": "normal",
-      "labelColor": "#ffffff",
-      "titleColor": "#ffffff",
-      "titleLimit": 320
-    },
-    "text": {
-      "font": "Source Serif 4",
-      "color": "#ffffff"
-    }
-  },
-  "usermeta": {
-    "map": true,
-    "w0": 560,
-    "h0": 470,
-    "scale0": 72498
-  },
-  "width": 560,
-  "height": 470,
-  "projection": {
-    "type": "mercator",
-    "center": [
-      153.055,
-      -27.47
-    ],
-    "scale": 72498
-  },
-  "layer": [
-    {
-      "data": {
-        "values": [
-          {
-            "a": 1
-          }
-        ]
-      },
-      "mark": {
-        "type": "rect",
-        "x": 0,
-        "y": 0,
-        "x2": "width",
-        "y2": "height",
-        "fill": "#0e1a33",
-        "stroke": null
-      }
-    },
-    {
-      "data": {
-        "url": "states.geojson",
-        "format": {
-          "property": "features"
-        }
-      },
-      "mark": {
-        "type": "geoshape",
-        "fill": "#24395f",
-        "stroke": "#5876a8",
-        "strokeWidth": 1.25
-      }
-    },
-    {
-      "data": {
-        "url": "venues.json"
-      },
-      "mark": {
-        "type": "circle",
-        "opacity": 0.72,
-        "stroke": "#d7fff7",
-        "strokeWidth": 0.9,
-        "color": "#42dfc5"
-      },
-      "encoding": {
-        "latitude": {
-          "field": "lat",
-          "type": "quantitative"
-        },
-        "longitude": {
-          "field": "lon",
-          "type": "quantitative"
-        },
-        "size": {
-          "field": "n",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              0,
-              276
-            ],
-            "range": [
-              14,
-              700
-            ]
-          },
-          "legend": {
-            "title": "Events at a venue",
-            "orient": "bottom",
-            "direction": "horizontal",
-            "values": [
-              10,
-              100,
-              250
-            ],
-            "symbolFillColor": "#2fd1b5",
-            "symbolOpacity": 0.7,
-            "labelColor": "#ffffff",
-            "titleColor": "#ffffff"
-          }
-        },
-        "tooltip": [
-          {
-            "field": "venue",
-            "type": "nominal",
-            "title": "Venue"
-          },
-          {
-            "field": "venueType",
-            "type": "nominal",
-            "title": "Type"
-          },
-          {
-            "field": "n",
-            "type": "quantitative",
-            "title": "Events"
-          }
-        ]
-      }
-    },
-    {
-      "data": {
-        "url": "venues_festival.json"
-      },
-      "mark": {
-        "type": "circle",
-        "opacity": 1,
-        "stroke": "#ffffff",
-        "strokeWidth": 1.8,
-        "color": "#ff4f9a"
-      },
-      "encoding": {
-        "latitude": {
-          "field": "lat",
-          "type": "quantitative"
-        },
-        "longitude": {
-          "field": "lon",
-          "type": "quantitative"
-        },
-        "size": {
-          "field": "n",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              0,
-              276
-            ],
-            "range": [
-              60,
-              700
-            ]
-          },
-          "legend": null
-        },
-        "tooltip": [
-          {
-            "field": "venue",
-            "type": "nominal",
-            "title": "Festival or market venue"
-          },
           {
             "field": "n",
             "type": "quantitative",
@@ -204,6 +9,11 @@
     {
       "data": {
         "values": [
+          {
+            "name": "Brisbane CBD",
+            "lat": -27.4698,
+            "lon": 153.0251
+          },
           {
             "name": "Chermside",
             "lat": -27.386,
@@ -226,6 +36,19 @@
           }
         ]
       },
+      "mark": {
+        "type": "text",
+        "fontSize": 13,
+        "fontStyle": "normal",
+        "color": "#ffffff",
+        "stroke": "#071326",
+        "strokeWidth": 1.35,
+        "align": "left",
+        "dx": 9,
+        "dy": -9,
+        "fontWeight": 700,
+        "strokeJoin": "round"
+      },
       "encoding": {
         "latitude": {
           "field": "lat",
@@ -234,65 +57,12 @@
         "longitude": {
           "field": "lon",
           "type": "quantitative"
-        }
-      },
-      "layer": [
-        {
-          "mark": {
-            "type": "point",
-            "shape": "circle",
-            "size": 42,
-            "filled": true,
-            "color": "#ffffff",
-            "stroke": "#071326",
-            "strokeWidth": 1.6
-          }
         },
-        {
-          "mark": {
-            "type": "text",
-            "fontSize": 13,
-            "fontWeight": 700,
-            "align": "left",
-            "dx": 9,
-            "dy": -9,
-            "color": "#ffffff",
-            "stroke": "#08162e",
-            "strokeWidth": 3.5,
-            "strokeJoin": "round",
-            "strokeOpacity": 1,
-            "limit": 220
-          },
-          "encoding": {
-            "text": {
-              "field": "name",
-              "type": "nominal"
-            }
-          }
-        },
-        {
-          "mark": {
-            "type": "text",
-            "fontSize": 13,
-            "fontWeight": 700,
-            "align": "left",
-            "dx": 9,
-            "dy": -9,
-            "color": "#ffffff",
-            "stroke": "#08162e",
-            "strokeWidth": 3.5,
-            "strokeJoin": "round",
-            "strokeOpacity": 1,
-            "limit": 220
-          },
-          "encoding": {
-            "text": {
-              "field": "name",
-              "type": "nominal"
-            }
-          }
+        "text": {
+          "field": "name",
+          "type": "nominal"
         }
-      ]
+      }
     },
     {
       "data": {
@@ -324,15 +94,14 @@
             "type": "text",
             "fontSize": 13,
             "fontWeight": 700,
-            "align": "center",
-            "dx": 0,
-            "dy": -22,
-            "color": "#ffd1e4",
-            "stroke": "#08162e",
-            "strokeWidth": 3.5,
-            "strokeJoin": "round",
-            "strokeOpacity": 1,
-            "limit": 220
+            "align": "left",
+            "dx": 10,
+            "dy": -20,
+            "color": "#ffffff",
+            "fontStyle": "normal",
+            "stroke": "#071326",
+            "strokeWidth": 1.35,
+            "strokeJoin": "round"
           }
         }
       ]
