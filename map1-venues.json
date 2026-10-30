@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Night map of Brisbane: event venues as glowing circles, festival and market venues in magenta",
+  "description": "Night map of Brisbane: event venues as glowing circles, festival and market venues in magenta. Updated for high-contrast white labels, clearer map boundaries and readable legends.",
   "config": {
     "view": {
       "stroke": null,
-      "fill": "#0e1a33"
+      "fill": "#101c34"
     },
     "font": "Source Serif 4",
     "axis": {
@@ -15,9 +15,9 @@
       "labelFontSize": 13,
       "titleFontSize": 13,
       "titleFontWeight": "normal",
-      "labelColor": "#39425a",
-      "titleColor": "#39425a",
-      "gridColor": "#e8ebf3",
+      "labelColor": "#ffffff",
+      "titleColor": "#ffffff",
+      "gridColor": "#405477",
       "labelPadding": 6,
       "titlePadding": 10
     },
@@ -27,12 +27,13 @@
       "labelFontSize": 12,
       "titleFontSize": 12,
       "titleFontWeight": "normal",
-      "labelColor": "#39425a",
-      "titleColor": "#39425a",
+      "labelColor": "#ffffff",
+      "titleColor": "#ffffff",
       "titleLimit": 320
     },
     "text": {
-      "font": "Source Serif 4"
+      "font": "Source Serif 4",
+      "color": "#ffffff"
     }
   },
   "usermeta": {
@@ -79,9 +80,9 @@
       },
       "mark": {
         "type": "geoshape",
-        "fill": "#1f3259",
-        "stroke": "#3b5384",
-        "strokeWidth": 1
+        "fill": "#24395f",
+        "stroke": "#5876a8",
+        "strokeWidth": 1.25
       }
     },
     {
@@ -90,10 +91,10 @@
       },
       "mark": {
         "type": "circle",
-        "opacity": 0.55,
-        "stroke": "#bff3e6",
-        "strokeWidth": 0.6,
-        "color": "#2fd1b5"
+        "opacity": 0.72,
+        "stroke": "#d7fff7",
+        "strokeWidth": 0.9,
+        "color": "#42dfc5"
       },
       "encoding": {
         "latitude": {
@@ -127,7 +128,9 @@
               250
             ],
             "symbolFillColor": "#2fd1b5",
-            "symbolOpacity": 0.7
+            "symbolOpacity": 0.7,
+            "labelColor": "#ffffff",
+            "titleColor": "#ffffff"
           }
         },
         "tooltip": [
@@ -155,10 +158,10 @@
       },
       "mark": {
         "type": "circle",
-        "opacity": 0.95,
-        "stroke": "#fff",
-        "strokeWidth": 1.6,
-        "color": "#ff3d8b"
+        "opacity": 1,
+        "stroke": "#ffffff",
+        "strokeWidth": 1.8,
+        "color": "#ff4f9a"
       },
       "encoding": {
         "latitude": {
@@ -238,11 +241,11 @@
           "mark": {
             "type": "point",
             "shape": "circle",
-            "size": 34,
+            "size": 42,
             "filled": true,
             "color": "#ffffff",
-            "stroke": "#0b1530",
-            "strokeWidth": 1.2
+            "stroke": "#071326",
+            "strokeWidth": 1.6
           }
         },
         {
@@ -251,12 +254,14 @@
             "fontSize": 13,
             "fontWeight": 700,
             "align": "left",
-            "dx": 8,
-            "dy": -8,
-            "color": "#0b1530",
-            "stroke": "#0b1530",
-            "strokeWidth": 5,
-            "strokeJoin": "round"
+            "dx": 9,
+            "dy": -9,
+            "color": "#ffffff",
+            "stroke": "#08162e",
+            "strokeWidth": 3.5,
+            "strokeJoin": "round",
+            "strokeOpacity": 1,
+            "limit": 220
           },
           "encoding": {
             "text": {
@@ -271,9 +276,14 @@
             "fontSize": 13,
             "fontWeight": 700,
             "align": "left",
-            "dx": 8,
-            "dy": -8,
-            "color": "#ffffff"
+            "dx": 9,
+            "dy": -9,
+            "color": "#ffffff",
+            "stroke": "#08162e",
+            "strokeWidth": 3.5,
+            "strokeJoin": "round",
+            "strokeOpacity": 1,
+            "limit": 220
           },
           "encoding": {
             "text": {
@@ -314,24 +324,15 @@
             "type": "text",
             "fontSize": 13,
             "fontWeight": 700,
-            "align": "left",
-            "dx": 18,
-            "dy": -24,
-            "color": "#0e1a33",
-            "stroke": "#0e1a33",
-            "strokeWidth": 5,
-            "strokeJoin": "round"
-          }
-        },
-        {
-          "mark": {
-            "type": "text",
-            "fontSize": 13,
-            "fontWeight": 700,
-            "align": "left",
-            "dx": 18,
-            "dy": -24,
-            "color": "#ffd1e4"
+            "align": "center",
+            "dx": 0,
+            "dy": -22,
+            "color": "#ffd1e4",
+            "stroke": "#08162e",
+            "strokeWidth": 3.5,
+            "strokeJoin": "round",
+            "strokeOpacity": 1,
+            "limit": 220
           }
         }
       ]
