@@ -223,18 +223,6 @@
           }
         ]
       },
-      "mark": {
-        "type": "text",
-        "fontSize": 12,
-        "fontStyle": "italic",
-        "color": "#c9d4ee",
-        "stroke": "#0e1a33",
-        "strokeWidth": 3,
-        "paintOrder": "stroke",
-        "align": "left",
-        "dx": 7,
-        "dy": -7
-      },
       "encoding": {
         "latitude": {
           "field": "lat",
@@ -243,12 +231,58 @@
         "longitude": {
           "field": "lon",
           "type": "quantitative"
-        },
-        "text": {
-          "field": "name",
-          "type": "nominal"
         }
-      }
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "point",
+            "shape": "circle",
+            "size": 34,
+            "filled": true,
+            "color": "#ffffff",
+            "stroke": "#0b1530",
+            "strokeWidth": 1.2
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 13,
+            "fontWeight": 700,
+            "align": "left",
+            "dx": 8,
+            "dy": -8,
+            "color": "#0b1530",
+            "stroke": "#0b1530",
+            "strokeWidth": 5,
+            "strokeJoin": "round"
+          },
+          "encoding": {
+            "text": {
+              "field": "name",
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 13,
+            "fontWeight": 700,
+            "align": "left",
+            "dx": 8,
+            "dy": -8,
+            "color": "#ffffff"
+          },
+          "encoding": {
+            "text": {
+              "field": "name",
+              "type": "nominal"
+            }
+          }
+        }
+      ]
     },
     {
       "data": {
@@ -278,25 +312,25 @@
         {
           "mark": {
             "type": "text",
-            "fontSize": 12,
-            "fontWeight": 600,
-            "align": "right",
-            "dx": -14,
-            "dy": -18,
+            "fontSize": 13,
+            "fontWeight": 700,
+            "align": "left",
+            "dx": 18,
+            "dy": -24,
             "color": "#0e1a33",
             "stroke": "#0e1a33",
-            "strokeWidth": 4,
+            "strokeWidth": 5,
             "strokeJoin": "round"
           }
         },
         {
           "mark": {
             "type": "text",
-            "fontSize": 12,
-            "fontWeight": 600,
-            "align": "right",
-            "dx": -14,
-            "dy": -18,
+            "fontSize": 13,
+            "fontWeight": 700,
+            "align": "left",
+            "dx": 18,
+            "dy": -24,
             "color": "#ffd1e4"
           }
         }
